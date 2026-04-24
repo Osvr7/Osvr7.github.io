@@ -4,26 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Your Name | Creative Portfolio</title>
 
-    <!-- CSS File -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <div class="page-glow page-glow-left"></div>
+    <div class="page-glow page-glow-right"></div>
 
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-content">
-            <a href="#" class="logo">Your Name</a>
+            <a href="#home" class="logo">Your Name</a>
+
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -35,193 +39,337 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>
-                Hi, I'm <span class="highlight">Your Name</span>
-            </h1>
-
-            <p class="tagline">
-                Computer Science Student | Aspiring Developer
-            </p>
-
-            <p class="intro">
-                Welcome to my portfolio! I'm passionate about creating innovative solutions.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
-            </div>
-        </div>
-
-        <div class="hero-image">
-            <img src="images/profile.jpg" alt="Your Name">
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2 class="section-title">About Me</h2>
-
-        <div class="about-content">
-
-            <div class="about-text">
-                <p>
-                    Hello! I'm a Computer Science student at [Your University].
-                    I'm currently in my [Year] year, focusing on [Your Interests].
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-copy reveal">
+                <p class="eyebrow">Computer Science Student | Creative Builder</p>
+                <h1>
+                    A portfolio that feels like
+                    <span>you</span>.
+                </h1>
+                <p class="hero-text">
+                    I design thoughtful digital experiences, build practical software, and turn ideas into polished
+                    projects with personality.
                 </p>
 
-                <p>
-                    My journey in tech began when [Your Story].
-                    Since then, I've been constantly learning.
-                </p>
-            </div>
-
-            <div class="about-info">
-
-                <div class="info-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>BSc Computer Science</span>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">See Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Let's Connect</a>
                 </div>
 
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Jeddah, Saudi Arabia</span>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <h2 class="section-title">My Skills</h2>
-
-        <div class="skills-container">
-
-            <div class="skill-category">
-                <h3>
-                    <i class="fas fa-code"></i>
-                    Programming Languages
-                </h3>
-
-                <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">SQL</span>
+                <div class="hero-highlights">
+                    <div class="highlight-card">
+                        <strong>Creative coding</strong>
+                        <span>Design-led interfaces with clean structure</span>
+                    </div>
+                    <div class="highlight-card">
+                        <strong>Academic growth</strong>
+                        <span>Built to leave a strong impression in class</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="skill-category">
-                <h3>
-                    <i class="fas fa-laptop-code"></i>
-                    Web Development
-                </h3>
+            <div class="hero-visual reveal">
+                <div class="avatar-scene">
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
 
-                <div class="skill-tags">
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Node.js</span>
+                    <div class="avatar-card">
+                        <div class="avatar-badge">
+                            <i class="fa-solid fa-sparkles"></i>
+                            <span>Your digital persona</span>
+                        </div>
+
+                        <div class="avatar-wrap" aria-label="Stylized personal avatar illustration">
+                            <svg class="avatar" viewBox="0 0 420 460" role="img" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="bgBubble" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#fff8ef"></stop>
+                                        <stop offset="100%" stop-color="#ffe0b8"></stop>
+                                    </linearGradient>
+                                    <linearGradient id="shirtShade" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#ff8a5b"></stop>
+                                        <stop offset="100%" stop-color="#ff5f6d"></stop>
+                                    </linearGradient>
+                                    <linearGradient id="hairShade" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#3d2a27"></stop>
+                                        <stop offset="100%" stop-color="#1c1414"></stop>
+                                    </linearGradient>
+                                </defs>
+
+                                <circle cx="210" cy="198" r="168" fill="url(#bgBubble)"></circle>
+                                <circle cx="306" cy="126" r="22" fill="#ffc857" opacity="0.9"></circle>
+                                <circle cx="105" cy="108" r="16" fill="#7fd1b9" opacity="0.95"></circle>
+                                <circle cx="96" cy="276" r="12" fill="#ff8fab" opacity="0.85"></circle>
+
+                                <path d="M120 393c24-65 73-99 118-99 47 0 99 36 120 99v42H120z" fill="url(#shirtShade)">
+                                </path>
+                                <path
+                                    d="M179 299c7 15 20 26 31 26 12 0 25-10 33-25l12 18c-11 21-28 33-45 33-18 0-35-11-46-31z"
+                                    fill="#f6c1a8"></path>
+
+                                <path
+                                    d="M150 178c0-68 39-116 97-116 56 0 95 49 95 113 0 19-3 39-9 57-13 37-44 79-86 79-40 0-74-38-87-76-7-18-10-39-10-57z"
+                                    fill="#f4c7ae"></path>
+
+                                <path
+                                    d="M145 179c-8-54 17-120 98-120 81 0 107 69 98 126-5-14-10-22-17-31-2 14-12 22-33 23-49 2-88-12-114-35-5 17-18 30-32 37z"
+                                    fill="url(#hairShade)"></path>
+                                <path
+                                    d="M154 168c3-36 26-83 89-83 64 0 89 45 92 87-17-18-50-23-85-25-32-1-66-5-96-23z"
+                                    fill="url(#hairShade)"></path>
+
+                                <ellipse cx="177" cy="198" rx="10" ry="12" fill="#221818"></ellipse>
+                                <ellipse cx="251" cy="198" rx="10" ry="12" fill="#221818"></ellipse>
+                                <ellipse cx="174" cy="195" rx="3" ry="3" fill="#ffffff"></ellipse>
+                                <ellipse cx="248" cy="195" rx="3" ry="3" fill="#ffffff"></ellipse>
+
+                                <path d="M162 177c10-10 29-12 43-5" stroke="#2d1f1d" stroke-width="6"
+                                    stroke-linecap="round" fill="none"></path>
+                                <path d="M221 171c12-10 31-10 43 1" stroke="#2d1f1d" stroke-width="6"
+                                    stroke-linecap="round" fill="none"></path>
+
+                                <path d="M213 205c-3 15-6 29-3 39" stroke="#d49174" stroke-width="5"
+                                    stroke-linecap="round" fill="none"></path>
+                                <path d="M183 255c14 12 38 14 54 0" stroke="#b85f64" stroke-width="6"
+                                    stroke-linecap="round" fill="none"></path>
+
+                                <circle cx="152" cy="233" r="14" fill="#f4a4a8" opacity="0.45"></circle>
+                                <circle cx="272" cy="233" r="14" fill="#f4a4a8" opacity="0.45"></circle>
+
+                                <path
+                                    d="M172 362c19 12 70 12 95 0l19 52H154z"
+                                    fill="#fff2e8"></path>
+                                <path d="M184 339c12 9 40 9 53 0v32c-15 11-38 11-53 0z" fill="#e8a78f"></path>
+                            </svg>
+                        </div>
+
+                        <div class="avatar-notes">
+                            <div>
+                                <strong>Colorful</strong>
+                                <span>Warm, uplifting tones</span>
+                            </div>
+                            <div>
+                                <strong>Personal</strong>
+                                <span>Bitmoji-style visual identity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-note note-top">Creative thinker</div>
+                    <div class="floating-note note-bottom">Future-ready builder</div>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </section>
+        <section id="about" class="about reveal">
+            <div class="section-heading">
+                <p class="eyebrow">About Me</p>
+                <h2>Warm presentation, strong substance.</h2>
+            </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2 class="section-title">My Projects</h2>
-
-        <div class="projects-grid">
-
-            <div class="project-card">
-
-                <div class="project-image">
-                    <img src="images/project1.jpg" alt="Project 1">
-                </div>
-
-                <div class="project-info">
-                    <h3>Project Title 1</h3>
-
+            <div class="about-grid">
+                <div class="about-story">
                     <p>
-                        A brief description of your project.
+                        I am a Computer Science student who enjoys blending logic, creativity, and meaningful design.
+                        My goal is to build projects that feel clear, modern, and memorable at first glance.
                     </p>
-
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Flask</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="#">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-
-                        <a href="#">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
-                    </div>
+                    <p>
+                        This portfolio was styled to feel polished and inspiring, with a custom avatar, a softer visual
+                        palette, and a more personal layout that stands out from a standard student template.
+                    </p>
                 </div>
 
+                <div class="about-panel">
+                    <div class="info-row">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <div>
+                            <strong>BSc Computer Science</strong>
+                            <span>Student portfolio with academic focus</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Saudi Arabia</strong>
+                            <span>Locally grounded, globally inspired</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <div>
+                            <strong>Interests</strong>
+                            <span>Web design, software development, creative problem solving</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills reveal">
+            <div class="section-heading">
+                <p class="eyebrow">Skills</p>
+                <h2>A balanced mix of technical and creative strengths.</h2>
             </div>
 
-            <!-- Add more project cards as needed -->
+            <div class="skills-layout">
+                <article class="skill-block">
+                    <h3><i class="fa-solid fa-code"></i> Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </article>
 
-        </div>
-    </section>
+                <article class="skill-block accent-block">
+                    <h3><i class="fa-solid fa-laptop-code"></i> Web Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">UI Styling</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </article>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Get In Touch</h2>
-
-        <div class="contact-content">
-
-            <p>
-                I'm currently looking for opportunities!
-            </p>
-
-            <div class="contact-methods">
-
-                <a href="mailto:your.email@example.com" class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>your.email@example.com</span>
-                </a>
-
-                <a href="https://linkedin.com/in/yourprofile" class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
-
-                <a href="https://github.com/yourusername" class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-
+                <article class="skill-block">
+                    <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Personal Edge</h3>
+                    <div class="trait-list">
+                        <div class="trait">
+                            <span>Presentation</span>
+                            <strong>Elegant and memorable</strong>
+                        </div>
+                        <div class="trait">
+                            <span>Mindset</span>
+                            <strong>Curious and growth-focused</strong>
+                        </div>
+                        <div class="trait">
+                            <span>Work style</span>
+                            <strong>Clean, organized, detail-oriented</strong>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <section id="projects" class="projects reveal">
+            <div class="section-heading">
+                <p class="eyebrow">Featured Work</p>
+                <h2>Projects presented with clarity and confidence.</h2>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-visual project-visual-one">
+                        <span>Project 01</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Smart Student Dashboard</h3>
+                        <p>
+                            A clean dashboard concept for tracking courses, tasks, deadlines, and progress in one
+                            calming interface.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-visual project-visual-two">
+                        <span>Project 02</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Creative Portfolio Website</h3>
+                        <p>
+                            A personal website designed to feel expressive, polished, and visually memorable for
+                            academic presentation.
+                        </p>
+                        <div class="project-tech">
+                            <span>Branding</span>
+                            <span>UI Design</span>
+                            <span>Frontend</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-visual project-visual-three">
+                        <span>Project 03</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Problem Solving Archive</h3>
+                        <p>
+                            A growing collection of coding exercises and small builds that show consistency, curiosity,
+                            and technical improvement.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Algorithms</span>
+                            <span>Practice</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="contact reveal">
+            <div class="contact-card">
+                <div class="section-heading">
+                    <p class="eyebrow">Contact</p>
+                    <h2>Let your next opportunity find you beautifully presented.</h2>
+                </div>
+
+                <p class="contact-text">
+                    I am open to internships, collaborations, and new learning experiences. Reach out through the
+                    platforms below and let's build something meaningful.
+                </p>
+
+                <div class="contact-methods">
+                    <a href="mailto:your.email@example.com" class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>your.email@example.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" class="contact-item">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                    <a href="https://github.com/yourusername" class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
-
-        <p>&copy; 2026 Your Name. All rights reserved.</p>
-
+        <p>&copy; 2026 Your Name. Designed to feel personal, bright, and memorable.</p>
         <div class="social-links">
             <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
         </div>
-
     </footer>
 
-    <!-- JavaScript File -->
     <script src="js/script.js"></script>
-
 </body>
 
 </html>

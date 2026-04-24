@@ -1,30 +1,66 @@
-// Smooth Scrolling for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+const navbar = document.querySelector(".navbar");
+const navLinks = document.querySelector(".nav-links");
+const navLinkItems = document.querySelectorAll(".nav-links a");
+const menuToggle = document.querySelector(".menu-toggle");
+const revealItems = document.querySelectorAll(".reveal");
+const sections = document.querySelectorAll("main section[id]");
 
-        const target = document.querySelector(
-            this.getAttribute('href')
-        );
+navLinkItems.forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const target = document.querySelector(anchor.getAttribute("href"));
 
         if (target) {
             target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                behavior: "smooth",
+                block: "start"
             });
         }
+
+        navLinks.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
     });
 });
 
-// Navbar Background Change on Scroll
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    }
+menuToggle.addEventListener("click", () => {
+    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+    navLinks.classList.toggle("is-open");
 });
 
-console.log('Portfolio loaded successfully!');
+window.addEventListener("scroll", () => {
+    navbar.classList.toggle("is-scrolled", window.scrollY > 24);
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+revealItems.forEach((item) => revealObserver.observe(item));
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+            return;
+        }
+
+        const activeId = entry.target.getAttribute("id");
+
+        navLinkItems.forEach((link) => {
+            const isActive = link.getAttribute("href") === `#${activeId}`;
+            link.classList.toggle("active", isActive);
+        });
+    });
+}, {
+    rootMargin: "-35% 0px -45% 0px",
+    threshold: 0
+});
+
+sections.forEach((section) => sectionObserver.observe(section));
