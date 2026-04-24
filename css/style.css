@@ -291,8 +291,7 @@ section {
 
 .highlight-card strong,
 .info-row strong,
-.trait strong,
-.avatar-notes strong {
+.trait strong {
     display: block;
     margin-bottom: 0.2rem;
     font-size: 0.98rem;
@@ -331,27 +330,14 @@ section {
 
 .avatar-card {
     position: relative;
-    width: min(100%, 29rem);
-    padding: 1.4rem;
+    width: min(100%, 28rem);
+    padding: 0.9rem;
     border-radius: 2rem;
 }
 
-.avatar-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    padding: 0.55rem 0.9rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.82);
-    font-size: 0.86rem;
-    font-weight: 800;
-    color: var(--text-main);
-    box-shadow: 0 12px 24px rgba(111, 73, 55, 0.1);
-}
-
 .avatar-wrap {
-    margin: 1rem 0 1.2rem;
-    padding: 1rem;
+    margin: 0;
+    padding: 0.9rem;
     border-radius: 1.7rem;
     background:
         radial-gradient(circle at top right, rgba(255, 200, 87, 0.5), transparent 26%),
@@ -373,41 +359,8 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
     filter: saturate(1.06) contrast(1.03);
-}
-
-.avatar-notes {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.8rem;
-}
-
-.avatar-notes > div {
-    padding: 0.95rem 1rem;
-    border-radius: var(--radius-sm);
-    background: rgba(255, 255, 255, 0.74);
-}
-
-.floating-note {
-    position: absolute;
-    padding: 0.9rem 1rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.84);
-    box-shadow: var(--shadow-soft);
-    font-size: 0.92rem;
-    font-weight: 800;
-    color: var(--text-main);
-}
-
-.note-top {
-    top: 3rem;
-    right: 0;
-}
-
-.note-bottom {
-    bottom: 4rem;
-    left: 0;
 }
 
 .section-heading {
@@ -748,8 +701,7 @@ section {
         font-size: clamp(3rem, 16vw, 4.3rem);
     }
 
-    .hero-highlights,
-    .avatar-notes {
+    .hero-highlights {
         grid-template-columns: 1fr;
     }
 
@@ -757,8 +709,7 @@ section {
         min-height: 30rem;
     }
 
-    .orbit-two,
-    .floating-note {
+    .orbit-two {
         display: none;
     }
 
