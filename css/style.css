@@ -276,8 +276,7 @@ section {
 .skill-block,
 .project-card,
 .contact-card,
-.about-panel,
-.avatar-card {
+.about-panel {
     background: var(--surface);
     border: 1px solid rgba(255, 255, 255, 0.72);
     backdrop-filter: blur(18px);
@@ -331,28 +330,24 @@ section {
 .avatar-card {
     position: relative;
     width: min(100%, 28rem);
-    padding: 0.9rem;
-    border-radius: 2rem;
+    padding: 0;
+    border-radius: 0;
 }
 
 .avatar-wrap {
     margin: 0;
-    padding: 0.9rem;
-    border-radius: 1.7rem;
-    background:
-        radial-gradient(circle at top right, rgba(255, 200, 87, 0.5), transparent 26%),
-        linear-gradient(180deg, #fffaf2 0%, #fff1e1 100%);
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
 }
 
 .avatar-frame {
     aspect-ratio: 1 / 1;
     width: 100%;
     overflow: hidden;
-    border-radius: 1.3rem;
-    background:
-        radial-gradient(circle at top left, rgba(255, 200, 87, 0.36), transparent 24%),
-        linear-gradient(135deg, rgba(255, 138, 91, 0.18), rgba(127, 209, 185, 0.22));
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: none;
 }
 
 .avatar-photo {
@@ -719,6 +714,10 @@ section {
     .skill-block,
     .contact-card {
         padding: 1.35rem;
+    }
+
+    .avatar-card {
+        padding: 0;
     }
 
     .project-info,
