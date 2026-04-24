@@ -17,6 +17,9 @@
     --radius-sm: 12px;
     --max-width: 1180px;
     --transition: 240ms ease;
+    --avatar-size: clamp(21rem, 38vw, 30rem);
+    --avatar-focus-x: 50%;
+    --avatar-focus-y: 50%;
 }
 
 * {
@@ -329,9 +332,10 @@ section {
 
 .avatar-card {
     position: relative;
-    width: min(100%, 28rem);
+    width: min(100%, var(--avatar-size));
     padding: 0;
     border-radius: 0;
+    margin: 0 auto;
 }
 
 .avatar-wrap {
@@ -339,22 +343,28 @@ section {
     padding: 0;
     border-radius: 0;
     background: transparent;
+    display: flex;
+    justify-content: center;
 }
 
 .avatar-frame {
     aspect-ratio: 1 / 1;
     width: 100%;
+    padding: 1.9rem;
     overflow: hidden;
     border-radius: 50%;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.2);
     box-shadow: none;
+    display: grid;
+    place-items: center;
 }
 
 .avatar-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+    object-position: 50%;
+    transform: translateY(-2.5rem);
     filter: saturate(1.06) contrast(1.03);
 }
 
