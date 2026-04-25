@@ -567,9 +567,44 @@ section {
     padding: 2rem;
 }
 
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.contact-copy .section-heading {
+    margin-bottom: 1.4rem;
+}
+
 .contact-text {
     max-width: 42rem;
     margin-bottom: 1.4rem;
+}
+
+.contact-avatar {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-avatar-frame {
+    width: min(100%, 22rem);
+    aspect-ratio: 1 / 1;
+    padding: 1.35rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.28);
+    display: grid;
+    place-items: center;
+}
+
+.contact-avatar-photo {
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+    object-position: 50%;
+    transform: translateY(-1.9rem);
+    filter: saturate(1.06) contrast(1.03);
 }
 
 .footer {
@@ -623,7 +658,8 @@ section {
     .hero,
     .about-grid,
     .skills-layout,
-    .projects-grid {
+    .projects-grid,
+    .contact-layout {
         grid-template-columns: 1fr;
     }
 
@@ -641,6 +677,14 @@ section {
 
     .projects-grid {
         gap: 1rem;
+    }
+
+    .contact-avatar {
+        order: -1;
+    }
+
+    .contact-avatar-frame {
+        width: min(100%, 18rem);
     }
 }
 
