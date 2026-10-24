@@ -184,6 +184,15 @@
     stage.parentElement.addEventListener("pointerleave", function () { layers.forEach(function (el, i) { el.style.transform = ""; }); });
   }
 
+  /* ---------- Back to top ---------- */
+  $$(".to-top").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+      var target = document.getElementById("main"); if (target) { target.setAttribute("tabindex", "-1"); target.focus({ preventScroll: true }); }
+    });
+  });
+
   /* ---------- Portrait flip (photo <-> Bitmoji) ---------- */
   $$(".flip").forEach(function (btn) {
     btn.addEventListener("click", function () {
@@ -199,7 +208,7 @@
   var certGrid = $("#cert-grid"), certFilters = $("#cert-filters");
   var certs = window.CERTIFICATES || [];
   if (certGrid && certFilters && certs.length) {
-    var LIMIT = 9, cState = { group: "all", all: false };
+    var LIMIT = 12, cState = { group: "all", all: false };
     var groups = (window.CERT_GROUPS || []).filter(function (g) { return g.id === "all" || certs.some(function (c) { return c.group === g.id; }); });
     certFilters.innerHTML = groups.map(function (g) {
       var n = g.id === "all" ? certs.length : certs.filter(function (c) { return c.group === g.id; }).length;

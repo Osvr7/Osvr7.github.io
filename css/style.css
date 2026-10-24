@@ -347,13 +347,7 @@ section { position: relative; }
 /* ---------- About ---------- */
 .about-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
 .portrait { position: relative; margin: 0; }
-.portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
 .portrait figcaption { margin-top: .9rem; font-size: .82rem; color: var(--faint); }
-.portrait .avatar-badge {
-  position: absolute; right: -18px; top: -18px; width: 96px; height: 96px; border-radius: 50%;
-  background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-md); overflow: hidden;
-}
-.portrait .avatar-badge img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: center 18%; border-radius: 0; box-shadow: none; }
 .about-copy { display: grid; gap: 1.4rem; }
 .about-copy .lead { font-family: var(--font-display); font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.2; }
 .about-copy p { color: var(--muted); }
@@ -580,7 +574,6 @@ td:last-child { font-weight: 700; color: var(--green); }
   .cs-meta { grid-template-columns: 1fr 1fr; }
   .search, .search input { width: 100%; }
   .stage-chip { display: none; }
-  .portrait .avatar-badge { right: 8px; top: 8px; width: 72px; height: 72px; }
   .cs-next a.next { text-align: left; }
   .feature-media .media-phone { right: 2%; width: 28%; }
   .cs-cover-pair .frame-phone { right: 2%; }
@@ -605,27 +598,24 @@ td:last-child { font-weight: 700; color: var(--green); }
 }
 .flip-face img { width: 100%; height: 100%; object-fit: cover; }
 .flip-front img { object-position: center 30%; }
-.flip-back { transform: rotateY(180deg); background: radial-gradient(120% 90% at 50% 100%, var(--accent-soft), transparent 60%), linear-gradient(180deg, var(--surface), var(--bg-2)); }
-.flip-back img { object-fit: contain; object-position: center bottom; padding: 10% 8% 0; }
+.flip-back { transform: rotateY(180deg); background: transparent; border: 0; box-shadow: none; overflow: visible; }
+.flip-back img { object-fit: contain; object-position: center bottom; }
 .flip:hover .flip-inner { box-shadow: none; }
-.flip:hover .flip-face { box-shadow: var(--shadow-lg), 0 0 0 1px var(--line-strong); }
+.flip:hover .flip-front { box-shadow: var(--shadow-lg), 0 0 0 1px var(--line-strong); }
 .flip:focus-visible { outline-offset: 6px; }
 .portrait figcaption { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .flip-hint { display: inline-flex; align-items: center; gap: .4rem; color: var(--muted); }
 .flip-hint::before { content: "↻"; color: var(--accent); font-size: 1rem; line-height: 1; }
 
-/* ---------- Bitmoji on the contact card ---------- */
-.contact-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: clamp(24px, 5vw, 72px); align-items: center; }
+/* ---------- Bitmoji on the contact card (free-standing, no background) ---------- */
+.contact-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: clamp(24px, 4vw, 56px); align-items: end; padding-bottom: 0; }
 .contact-card > :not(.contact-bitmoji) { grid-column: 1; position: relative; z-index: 2; }
+.contact-card .contact-links { margin-bottom: clamp(32px, 6vw, 80px); max-width: none; }
 .contact-bitmoji {
-  grid-column: 2; grid-row: 1 / span 4; align-self: center;
-  width: clamp(190px, 22vw, 290px); aspect-ratio: 1; height: auto; object-fit: contain; object-position: center bottom;
-  padding: 14% 10% 0; border-radius: 50%;
-  background: radial-gradient(circle at 50% 35%, color-mix(in srgb, var(--accent) 38%, transparent), color-mix(in srgb, var(--bg) 10%, transparent) 70%);
-  border: 1px solid color-mix(in srgb, var(--bg) 18%, transparent);
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .45);
+  grid-column: 2; grid-row: 1 / span 4; align-self: end;
+  width: clamp(200px, 24vw, 320px); height: auto; display: block;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, .28));
 }
-.contact-links { max-width: none; }
 
 /* ---------- Certificates ---------- */
 .cert-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
@@ -651,7 +641,14 @@ td:last-child { font-weight: 700; color: var(--green); }
 @media (max-width: 1080px) { .cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) {
   .cert-grid { grid-template-columns: 1fr; }
-  .contact-card { grid-template-columns: 1fr; }
-  .contact-bitmoji { grid-column: 1; grid-row: auto; width: 150px; order: -1; justify-self: start; margin-bottom: 1rem; }
+  .contact-card { grid-template-columns: 1fr; padding-bottom: 0; }
+  .contact-bitmoji { grid-column: 1; grid-row: auto; width: 180px; justify-self: center; }
+  .contact-card .contact-links { margin-bottom: 1.5rem; }
   .portrait { max-width: 300px; margin-inline: auto; }
 }
+main:focus { outline: none; }
+/* Swap faces at the midpoint of the flip so the photo card's shadow never shows behind the Bitmoji */
+.flip-front, .flip-back { transition: visibility 0s linear .38s, box-shadow .3s; }
+.flip-back { visibility: hidden; }
+.flip[aria-pressed="true"] .flip-front { visibility: hidden; }
+.flip[aria-pressed="true"] .flip-back { visibility: visible; }
