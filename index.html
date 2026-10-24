@@ -1,420 +1,457 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osama Raed Abutaha | AI Specialist Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Osama Abutaha · AI &amp; Software Engineering Portfolio</title>
+  <meta name="description" content="Osama Abutaha, Computer Science senior on the AI track at Effat University. Projects in multi-agent simulation, machine learning, software design and full-stack development.">
+  <meta name="author" content="Osama Raed Abutaha">
+  <meta name="theme-color" content="#f6f3ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0d0b" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://osvr7.github.io/">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://osvr7.github.io/">
+  <meta property="og:title" content="Osama Abutaha · AI & Software Engineering Portfolio">
+  <meta property="og:description" content="Computer Science senior (AI track) building agent-based simulations, machine-learning models and the software around them.">
+  <meta property="og:image" content="https://osvr7.github.io/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Osama Abutaha · AI & Software Engineering Portfolio">
+  <meta name="twitter:description" content="Agent-based simulation, machine learning, software design and full-stack projects.">
+  <meta name="twitter:image" content="https://osvr7.github.io/images/og-image.png">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="images/projects/hajjsim/dashboard.webp">
+
+  <script>
+    // Apply the saved or system theme before first paint to avoid a flash.
+    (function () {
+      var d = document.documentElement; d.classList.remove("no-js");
+      var t = null; try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      d.setAttribute("data-theme", t);
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Osama Raed Abutaha",
+    "jobTitle": "Computer Science Student (AI Track)",
+    "url": "https://osvr7.github.io/",
+    "email": "mailto:osamaabutaha1@gmail.com",
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Effat University" },
+    "sameAs": ["https://github.com/Osvr7", "https://www.linkedin.com/in/osama-abutaha"]
+  }
+  </script>
 </head>
 
 <body>
-    <div class="page-glow page-glow-left"></div>
-    <div class="page-glow page-glow-right"></div>
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path class="icon-fill" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path class="icon-fill" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.5-1.5 7 5-3 5 3-1.5-7"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-cert" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 8h10M7 12h6M15 16l-1 5 3-2 3 2-1-5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></symbol>
+  </svg>
 
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="#home" class="logo">Osama Raed Abutaha</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Osama Abutaha, home">
+        <span class="brand-mark" aria-hidden="true">O</span>
+        <span>Osama Abutaha</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch colour theme">
+          <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+          <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg class="icon"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">CS Senior · AI Track · Effat University</p>
+          <h1>
+            <span class="line">I build systems</span>
+            <span class="line">that <em class="accent">think</em>,</span>
+            <span class="line">and software</span>
+            <span class="line">people can use.</span>
+          </h1>
+          <p class="hero-lede">
+            I'm <strong>Osama Abutaha</strong>, a Computer Science senior on the Artificial Intelligence track.
+            I've built a multi-agent Hajj crowd simulator, machine-learning models for health-risk prediction,
+            and full-stack and desktop applications, mostly in teams and always end to end.
+          </p>
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">See my work <svg class="icon icon-arrow"><use href="#i-arrow"/></svg></a>
+            <a href="#contact" class="btn btn-ghost">Get in touch</a>
+            <div class="hero-socials">
+              <a class="icon-btn" href="https://github.com/Osvr7" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><svg class="icon"><use href="#i-github"/></svg></a>
+              <a class="icon-btn" href="https://www.linkedin.com/in/osama-abutaha" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg class="icon"><use href="#i-linkedin"/></svg></a>
+            </div>
+          </div>
+          <div class="hero-facts">
+            <div class="fact"><strong>4.00</strong><span>Cumulative GPA<br>Dean's List</span></div>
+            <div class="fact"><strong>UGRF</strong><span>2026 research<br>paper &amp; poster</span></div>
+            <div class="fact"><strong>9</strong><span>Projects in<br>this portfolio</span></div>
+          </div>
+        </div>
+
+        <div class="hero-stage reveal" aria-hidden="true">
+          <div class="frame frame-browser stage-main" data-depth="10">
+            <div class="frame-bar"><i></i><i></i><i></i><span class="url">127.0.0.1:8000 · HajjSim Agent Studio</span></div>
+            <img src="images/projects/hajjsim/dashboard.webp" width="1600" height="1000" alt="">
+          </div>
+          <div class="frame frame-phone stage-phone" data-depth="22">
+            <img src="images/projects/cognitive-health/caregiver-app.webp" width="860" height="1800" alt="" loading="lazy">
+          </div>
+          <div class="stage-chip" data-depth="16">
+            <span class="status">Real screenshot</span>
+            <strong>HajjSim: 253 agents, ritual tick 7</strong>
+            <span>A live run of my AI course project.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED WORK ============ -->
+    <section class="section" id="work" style="padding-top: clamp(40px, 6vw, 72px);">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Selected work</p>
+          <h2>Three projects I'm <em class="accent">proudest</em> of.</h2>
+          <p>Each one has a full case study: the problem, what we built, the architecture, the results and exactly what my part was.</p>
+        </div>
+        <div class="featured-list" id="featured-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ ALL PROJECTS ============ -->
+    <section class="section" id="projects" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head split reveal">
+          <div>
+            <p class="eyebrow">All projects</p>
+            <h2 style="margin-top:1rem">The full collection.</h2>
+          </div>
+        </div>
+        <div class="toolbar reveal">
+          <div class="filters" id="filters" role="group" aria-label="Filter projects by category"></div>
+          <label class="search">
+            <span class="sr-only">Search projects</span>
+            <svg class="icon"><use href="#i-search"/></svg>
+            <input type="search" id="project-search" placeholder="Search by name or technology" autocomplete="off">
+          </label>
+        </div>
+        <div class="grid" id="project-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about" style="background: var(--bg-2);">
+      <div class="container about-grid">
+        <figure class="portrait reveal">
+          <img src="images/me/photo.webp" width="683" height="958" alt="Osama Abutaha at an Effat University event" loading="lazy">
+          <div class="avatar-badge" aria-hidden="true"><img src="images/me/avatar.webp" alt="" loading="lazy"></div>
+          <figcaption>Jeddah, Saudi Arabia</figcaption>
+        </figure>
+        <div class="about-copy reveal">
+          <p class="eyebrow">About me</p>
+          <p class="lead">I like problems where the answer has to be <em class="accent">engineered</em>, not just found.</p>
+          <p>
+            I'm a senior in Computer Science at <strong>Effat University</strong>, specialising in
+            <strong>Artificial Intelligence</strong>. My strongest work sits where AI meets real software:
+            agents that simulate crowds, models that estimate health risk, and the dashboards and
+            interfaces that make those results usable.
+          </p>
+          <p>
+            I've maintained a <strong>4.00 GPA</strong> on the Dean's List and presented research at
+            Effat's Undergraduate Research Forum. Outside class I lead the university's futsal club,
+            organise events, and care a lot about clear communication: documentation, posters and demos
+            are part of how I ship.
+          </p>
+          <div class="now">
+            <h3><svg class="icon"><use href="#i-spark"/></svg> This semester (Fall 2026)</h3>
+            <ul>
+              <li>Deep Learning: a lightweight real-time sign-language recognition model (in progress)</li>
+              <li>Machine Learning: a research paper on SMS spam detection (in progress)</li>
+              <li>Operating Systems and Numerical Methods</li>
             </ul>
+          </div>
+          <dl class="info-list">
+            <div class="info"><dt>Degree</dt><dd>BSc Computer Science, AI track</dd></div>
+            <div class="info"><dt>Standing</dt><dd>Senior · GPA 4.00</dd></div>
+            <div class="info"><dt>Interests</dt><dd>Multi-agent systems, applied ML</dd></div>
+            <div class="info"><dt>Looking for</dt><dd>AI &amp; software engineering internships and research</dd></div>
+          </dl>
         </div>
-    </nav>
+      </div>
+    </section>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-copy reveal">
-                <p class="eyebrow">Junior Computer Science Student • AI Track Specialist</p>
-                <h1>
-                    Turning 
-                    <span>logic</span> into <span>intelligent</span> solutions.
-                </h1>
-                <p class="hero-text">
-                    I am a dedicated Computer Science student at Effat University, focusing on the architectural foundations of Artificial Intelligence and behavioral simulation systems.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">See Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Let's Connect</a>
-                </div>
-
-                <div class="hero-highlights">
-                    <div class="highlight-card">
-                        <strong>Dean's List Scholar</strong>
-                        <span>Maintaining a 4.00 GPA with academic honors.</span>
-                    </div>
-                    <div class="highlight-card">
-                        <strong>Student Leadership</strong>
-                        <span>Effat Futsal Club Leader and Shura President Nominee.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-visual reveal">
-                <div class="avatar-scene">
-                    <div class="orbit orbit-one"></div>
-                    <div class="orbit orbit-two"></div>
-
-                    <div class="avatar-card">
-                        <div class="avatar-wrap" aria-label="Personal profile image">
-                            <div class="avatar-frame">
-                                <img class="avatar-photo" src="images/profile.png" alt="Osama Raed Abutaha">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about reveal">
-            <div class="section-heading">
-                <p class="eyebrow">About Me</p>
-                <h2>Precision in code, leadership in action.</h2>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-story">
-                    <p>
-                        As a Junior specializing in the Artificial Intelligence track, I have built a strong foundation in algorithm design, database systems, and object-oriented programming. My work is characterized by a hands-on approach to solving complex problems through mathematical modeling and efficient software architecture.
-                    </p>
-                    <p>
-                        Beyond technical development, I am deeply involved in the Effat community. From serving as a sports club leader to coordinating logistics for university celebrations, I strive to combine my technical skills with service-oriented leadership.
-                    </p>
-                </div>
-
-                <div class="about-panel">
-                    <div class="info-row">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <div>
-                            <strong>BSc Computer Science</strong>
-                            <span>Junior - Effat University (GPA: 4.00)</span>
-                        </div>
-                    </div>
-                    <div class="info-row">
-                        <i class="fa-solid fa-brain"></i>
-                        <div>
-                            <strong>Technical Focus</strong>
-                            <span>AI, Behavioral Simulations, and System Design</span>
-                        </div>
-                    </div>
-                    <div class="info-row">
-                        <i class="fa-solid fa-medal"></i>
-                        <div>
-                            <strong>Leadership Roles</strong>
-                            <span>Futsal Club Leader & Shura President Nominee</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="skills reveal">
-            <div class="section-heading">
-                <p class="eyebrow">Core Competencies</p>
-                <h2>Expertise in modern technologies.</h2>
-            </div>
-
-            <div class="skills-layout" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <article class="skill-block" style="padding: 2rem; border-radius: var(--radius-lg); background: var(--surface);">
-                    <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
-                        <i class="fa-solid fa-brain" style="color: var(--coral);"></i> Core Skills
-                    </h3>
-                    <div class="skill-tags" style="display: flex; flex-wrap: wrap; gap: 0.85rem;">
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-lightbulb"></i> Problem Solving
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-chart-line"></i> Data Analysis
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-diagram-project"></i> Project Management
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-magnifying-glass"></i> Critical Thinking
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-clock"></i> Time Management
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-comments"></i> Communication
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-users"></i> Teamwork
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-flask"></i> Research
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-square-root-variable"></i> Mathematics
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-percent"></i> Statistics
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-chart-pie"></i> Data Visualization
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-gears"></i> System Design
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-code-branch"></i> Algorithm Design
-                        </span>
-                    </div>
-                </article>
-
-                <article class="skill-block accent-block" style="padding: 2rem; border-radius: var(--radius-lg);">
-                    <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
-                        <i class="fa-solid fa-laptop-code" style="color: var(--coral);"></i> Technologies
-                    </h3>
-                    <div class="skill-tags" style="display: flex; flex-wrap: wrap; gap: 0.85rem;">
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-brands fa-python"></i> Python
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-brands fa-java"></i> Java
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-c"></i> C++
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-brands fa-html5"></i> HTML/CSS
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-brands fa-js"></i> JavaScript
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-database"></i> SQL
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-brands fa-git-alt"></i> Git
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-table"></i> Pandas
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-calculator"></i> NumPy
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-brain"></i> TensorFlow
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-chart-area"></i> Matplotlib
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-network-wired"></i> Cisco Packet Tracer
-                        </span>
-                        <span class="skill-tag" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem;">
-                            <i class="fa-solid fa-book-open"></i> Jupyter Notebook
-                        </span>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="courses" class="about reveal">
-            <div class="section-heading">
-                <p class="eyebrow">Academic Roadmap</p>
-                <h2>Important Courses</h2>
-            </div>
-            
-            <div class="about-panel" style="background: var(--surface); padding: 2.5rem; border-radius: var(--radius-lg);">
-                <div class="timeline-container" style="display: grid; gap: 1.5rem;">
-                    
-                    <div class="info-row" style="background: rgba(255,255,255,0.5); padding: 1.2rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1.2rem;">
-                        <i class="fa-solid fa-calendar-day" style="color: var(--coral);"></i>
-                        <div>
-                            <strong style="display: block; font-size: 0.9rem; color: var(--text-soft);">Spring 2024</strong>
-                            <span style="font-weight: 700;">Computing Principles • Principles of Computing</span>
-                        </div>
-                    </div>
-
-                    <div class="info-row" style="background: rgba(255,255,255,0.5); padding: 1.2rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1.2rem;">
-                        <i class="fa-solid fa-user-shield" style="color: var(--coral);"></i>
-                        <div>
-                            <strong style="display: block; font-size: 0.9rem; color: var(--text-soft);">Summer 2024</strong>
-                            <span style="font-weight: 700;">Information and Cyber Security</span>
-                        </div>
-                    </div>
-
-                    <div class="info-row" style="background: rgba(255,255,255,0.5); padding: 1.2rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1.2rem;">
-                        <i class="fa-solid fa-microchip" style="color: var(--coral);"></i>
-                        <div>
-                            <strong style="display: block; font-size: 0.9rem; color: var(--text-soft);">Fall 2024</strong>
-                            <span style="font-weight: 700;">Computer Architecture & Organization • Advanced Programming</span>
-                        </div>
-                    </div>
-
-                    <div class="info-row" style="background: rgba(255,255,255,0.5); padding: 1.2rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1.2rem;">
-                        <i class="fa-solid fa-database" style="color: var(--coral);"></i>
-                        <div>
-                            <strong style="display: block; font-size: 0.9rem; color: var(--text-soft);">Spring 2025</strong>
-                            <span style="font-weight: 700;">Database Systems • Computer Networks • Object Oriented Programming</span>
-                        </div>
-                    </div>
-
-                    <div class="info-row" style="background: rgba(255,255,255,0.5); padding: 1.2rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1.2rem;">
-                        <i class="fa-solid fa-code-branch" style="color: var(--coral);"></i>
-                        <div>
-                            <strong style="display: block; font-size: 0.9rem; color: var(--text-soft);">Summer 2025</strong>
-                            <span style="font-weight: 700;">Programming Languages</span>
-                        </div>
-                    </div>
-
-                    <div class="info-row" style="background: rgba(255,255,255,0.5); padding: 1.2rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1.2rem;">
-                        <i class="fa-solid fa-cubes" style="color: var(--coral);"></i>
-                        <div>
-                            <strong style="display: block; font-size: 0.9rem; color: var(--text-soft);">Fall 2025</strong>
-                            <span style="font-weight: 700;">Data Structures • Web Development • Data Science</span>
-                        </div>
-                    </div>
-
-                    <div class="info-row" style="background: rgba(255,255,255,0.5); padding: 1.2rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1.2rem;">
-                        <i class="fa-solid fa-brain" style="color: var(--coral);"></i>
-                        <div>
-                            <strong style="display: block; font-size: 0.9rem; color: var(--text-soft);">Spring 2026</strong>
-                            <span style="font-weight: 700;">Algorithm Analysis • Artificial Intelligence • Software Engineering • Technology Ethics</span>
-                        </div>
-                    </div>
-
-                    <div class="info-row" style="background: rgba(255,255,255,0.8); border: 1px solid var(--peach); padding: 1.2rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1.2rem;">
-                        <i class="fa-solid fa-atom" style="color: var(--coral);"></i>
-                        <div>
-                            <strong style="display: block; font-size: 0.9rem; color: var(--text-soft);">Summer 2026</strong>
-                            <span style="font-weight: 700;">Foundation in Physics</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects reveal">
-            <div class="section-heading">
-                <p class="eyebrow">Technical Projects</p>
-                <h2>Turning theory into functional intelligence.</h2>
-            </div>
-
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-visual project-visual-one">
-                        <span>AI Modeling</span>
-                    </div>
-                    <div class="project-info">
-                        <h3>Agent Behavioral Engine</h3>
-                        <p>
-                            Designed an AI simulation engine using the Mesa framework to model complex agent interactions in high-density environments.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Mesa</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-visual project-visual-two">
-                        <span>Full-Stack</span>
-                    </div>
-                    <div class="project-info">
-                        <h3>Jeddah Horizons Platform</h3>
-                        <p>
-                            A comprehensive tourism platform featuring a secure authentication system, SQL landmark database, and responsive UI.
-                        </p>
-                        <div class="project-tech">
-                            <span>SQL</span>
-                            <span>Bootstrap</span>
-                            <span>JS</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-visual project-visual-three">
-                        <span>Optimization</span>
-                    </div>
-                    <div class="project-info">
-                        <h3>SVD Optimization</h3>
-                        <p>
-                            Applied Singular Value Decomposition (SVD) for advanced image data compression and optimization.
-                        </p>
-                        <div class="project-tech">
-                            <span>Mathematics</span>
-                            <span>Python</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="contact" class="contact reveal">
-            <div class="contact-card">
-                <div class="contact-layout">
-                    <div class="contact-copy">
-                        <div class="section-heading">
-                            <p class="eyebrow">Contact</p>
-                            <h2>Let's build something meaningful.</h2>
-                        </div>
-                        <p class="contact-text">
-                            I am actively seeking research opportunities and internships focused on Artificial Intelligence and Software Development. Reach out to discuss how I can contribute.
-                        </p>
-                        <div class="contact-methods">
-                            <a href="mailto:osamaabutaha1@gmail.com" class="contact-item">
-                                <i class="fa-solid fa-envelope"></i>
-                                <span>osamaabutaha1@gmail.com</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/osama-abutaha" class="contact-item" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-linkedin-in"></i>
-                                <span>LinkedIn: osama-abutaha</span>
-                            </a>
-                            <a href="https://github.com/Osvr7" class="contact-item">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub: Osvr7</span>
-                            </a>
-                            <a href="tel:0504665952" class="contact-item">
-                                <i class="fa-solid fa-phone"></i>
-                                <span>0504665952</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="contact-avatar" aria-label="Profile image">
-                        <div class="contact-avatar-frame">
-                            <img class="contact-avatar-photo" src="images/profile.png" alt="Osama Raed Abutaha">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2026 Osama Raed Abutaha. Designed for Innovation & Leadership.</p>
-        <div class="social-links">
-            <a href="https://github.com/Osvr7"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/osama-abutaha" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-            <a href="mailto:osamaabutaha1@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Experience &amp; leadership</p>
+          <h2>Leading on campus, <em class="accent">recognised</em> in class.</h2>
         </div>
-    </footer>
+        <div class="exp-grid">
+          <div class="reveal">
+            <h3 class="col-title">Leadership &amp; service</h3>
+            <ol class="timeline">
+              <li>
+                <span class="when">2024 – Present</span>
+                <div>
+                  <h3>Leader, Effat Futsal Club</h3>
+                  <p class="org">Effat University</p>
+                  <p>Proposed and run the university's futsal club: membership, activities, club-fair presence and semester reports.</p>
+                </div>
+              </li>
+              <li>
+                <span class="when">2025</span>
+                <div>
+                  <h3>Shura Council President Nominee</h3>
+                  <p class="org">Effat University</p>
+                  <p>Nominated for the student council presidency, with a faculty recommendation.</p>
+                </div>
+              </li>
+              <li>
+                <span class="when">2025</span>
+                <div>
+                  <h3>Student Organiser, Graduation 2025</h3>
+                  <p class="org">Effat University</p>
+                  <p>Helped coordinate logistics for the university's graduation ceremony.</p>
+                </div>
+              </li>
+              <li>
+                <span class="when">Effat University</span>
+                <div>
+                  <h3>Vice President, Effat Dodgeball Team</h3>
+                </div>
+              </li>
+              <li>
+                <span class="when">Volunteering</span>
+                <div>
+                  <h3>Volunteer, National Center for Non-Profit Sector</h3>
+                  <p class="org">"Let's Walk Together" community event</p>
+                </div>
+              </li>
+              <li>
+                <span class="when">2021 – 2022</span>
+                <div>
+                  <h3>Manager</h3>
+                  <p class="org">Taibat Al-Amal Company (شركة طيبة الأمل)</p>
+                </div>
+              </li>
+              <li>
+                <span class="when">2018 – 2019</span>
+                <div>
+                  <h3>Graphic Designer</h3>
+                  <p class="org">Al-Mawaddah Association (جمعية المودة)</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="reveal">
+            <h3 class="col-title">Recognition &amp; certificates</h3>
+            <ul class="awards">
+              <li class="award">
+                <span class="badge"><svg class="icon"><use href="#i-award"/></svg></span>
+                <div><h3>Dean's List · 4.00 GPA</h3><p>Effat University, College of Engineering</p></div>
+              </li>
+              <li class="award">
+                <span class="badge"><svg class="icon"><use href="#i-doc"/></svg></span>
+                <div><h3>UGRF 2026 Research Presenter</h3><p>4th Undergraduate Research Forum: paper and poster on multi-disease health risk prediction (certificate of participation)</p></div>
+              </li>
+              <li class="award">
+                <span class="badge"><svg class="icon"><use href="#i-cert"/></svg></span>
+                <div><h3>Presentation Honors</h3><p>University of Colorado Boulder</p></div>
+              </li>
+              <li class="award">
+                <span class="badge"><svg class="icon"><use href="#i-cert"/></svg></span>
+                <div><h3>Programming for Everybody &amp; Python Data Structures</h3><p>University of Michigan via Coursera · 2024</p></div>
+              </li>
+              <li class="award">
+                <span class="badge"><svg class="icon"><use href="#i-cert"/></svg></span>
+                <div><h3>Generating Video Using AI · Advanced Adobe Photoshop</h3><p>Professional courses</p></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="js/script.js"></script>
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills" style="background: var(--bg-2);">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Skills</p>
+          <h2>Tools I've <em class="accent">shipped</em> with.</h2>
+          <p>Only things I've used in real projects, with where I used them.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-group reveal">
+            <h3>Languages</h3>
+            <p>Day-to-day and course-project languages.</p>
+            <ul class="skill-list">
+              <li><span>Python</span><span>HajjSim, health-risk ML, SVD</span></li>
+              <li><span>JavaScript</span><span>HajjSim dashboard, web apps</span></li>
+              <li><span>Java</span><span>ATM banking system (Swing)</span></li>
+              <li><span>C++</span><span>Postfix evaluator, bank system</span></li>
+              <li><span>SQL</span><span>Event database, Jeddah Horizons</span></li>
+              <li><span>PHP · HTML · CSS</span><span>Jeddah Horizons, this site</span></li>
+            </ul>
+          </article>
+          <article class="skill-group reveal">
+            <h3>AI, ML &amp; Data</h3>
+            <p>Modelling, evaluation and simulation.</p>
+            <ul class="skill-list">
+              <li><span>scikit-learn</span><span>7-model comparison, GridSearchCV</span></li>
+              <li><span>pandas · NumPy</span><span>Cleaning, EDA, SVD</span></li>
+              <li><span>seaborn · Matplotlib</span><span>EDA and result plots</span></li>
+              <li><span>Agent-based modelling</span><span>HajjSim</span></li>
+              <li><span>LLM integration</span><span>HajjSim decision layer (team)</span></li>
+              <li><span>Jupyter</span><span>Data Science project</span></li>
+            </ul>
+          </article>
+          <article class="skill-group reveal">
+            <h3>Web &amp; Software</h3>
+            <p>Building usable interfaces and services.</p>
+            <ul class="skill-list">
+              <li><span>REST APIs (Python)</span><span>HajjSim backend</span></li>
+              <li><span>Leaflet · Chart.js</span><span>HajjSim live map and graphs</span></li>
+              <li><span>MySQL / MariaDB</span><span>Event DB, Jeddah Horizons</span></li>
+              <li><span>Java Swing</span><span>ATM GUI</span></li>
+              <li><span>Git · GitHub</span><span>HajjSim (team repo)</span></li>
+            </ul>
+          </article>
+          <article class="skill-group reveal">
+            <h3>Design &amp; Systems</h3>
+            <p>Modelling systems before building them.</p>
+            <ul class="skill-list">
+              <li><span>UML · C4 · ER modelling</span><span>Cognitive health system</span></li>
+              <li><span>Requirements engineering</span><span>SRS, use cases, traceability</span></li>
+              <li><span>Cisco Packet Tracer</span><span>RIP, DHCP, DNS network</span></li>
+              <li><span>LaTeX</span><span>Specs and research papers</span></li>
+              <li><span>Photoshop · video editing</span><span>Posters, demos</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Education</p>
+          <h2>Where I'm <em class="accent">learning</em>.</h2>
+        </div>
+        <div class="edu-card reveal">
+          <div class="edu-main">
+            <p class="mono" style="color:var(--faint)">2023 – Present</p>
+            <h3 style="margin-top:.6rem">BSc Computer Science</h3>
+            <p class="org">Effat University · Effat College of Engineering · Jeddah</p>
+            <div class="gpa"><strong>4.00</strong><span>cumulative GPA</span></div>
+            <div class="edu-badges">
+              <span class="tag">Dean's List</span>
+              <span class="tag">Artificial Intelligence track</span>
+              <span class="tag">Senior</span>
+            </div>
+          </div>
+          <div class="course-groups">
+            <div class="course-group">
+              <h4>AI &amp; Data</h4>
+              <div class="tags">
+                <span class="tag">Artificial Intelligence</span><span class="tag">Data Science</span><span class="tag">Linear Algebra</span><span class="tag">Statistics</span>
+                <span class="tag now-tag">Deep Learning</span><span class="tag now-tag">Machine Learning</span><span class="tag now-tag">Numerical Methods</span>
+              </div>
+            </div>
+            <div class="course-group">
+              <h4>Software</h4>
+              <div class="tags">
+                <span class="tag">Software Engineering</span><span class="tag">Algorithm Analysis</span><span class="tag">Data Structures</span><span class="tag">Object-Oriented Programming</span><span class="tag">Advanced Programming</span><span class="tag">Web Development</span><span class="tag">Programming Languages</span>
+              </div>
+            </div>
+            <div class="course-group">
+              <h4>Systems &amp; Security</h4>
+              <div class="tags">
+                <span class="tag">Database Systems</span><span class="tag">Computer Networks</span><span class="tag">Computer Architecture</span><span class="tag">Information &amp; Cyber Security</span><span class="tag now-tag">Operating Systems</span><span class="tag">Technology Ethics</span>
+              </div>
+            </div>
+            <p class="legend"><i></i> In progress, Fall 2026</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Let's build something <em class="accent">useful</em>.</h2>
+          <p>I'm looking for internships and research opportunities in AI and software engineering. The fastest way to reach me is email.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:osamaabutaha1@gmail.com"><svg class="icon"><use href="#i-mail"/></svg><div><small>Email</small><span>osamaabutaha1@gmail.com</span></div></a>
+            <a class="contact-link" href="https://www.linkedin.com/in/osama-abutaha" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-linkedin"/></svg><div><small>LinkedIn</small><span>in/osama-abutaha</span></div></a>
+            <a class="contact-link" href="https://github.com/Osvr7" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg><div><small>GitHub</small><span>github.com/Osvr7</span></div></a>
+            <a class="contact-link" href="tel:+966504665952"><svg class="icon"><use href="#i-phone"/></svg><div><small>Phone</small><span>+966 50 466 5952</span></div></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Osama Raed Abutaha. Built by hand with HTML, CSS and JavaScript.</p>
+      <div class="footer-links">
+        <a class="icon-btn" href="https://github.com/Osvr7" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon"><use href="#i-github"/></svg></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/osama-abutaha" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a>
+        <a class="icon-btn" href="mailto:osamaabutaha1@gmail.com" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a>
+        <a class="icon-btn" href="#top" aria-label="Back to top"><svg class="icon" style="transform:rotate(-90deg)"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
 </body>
-
 </html>
