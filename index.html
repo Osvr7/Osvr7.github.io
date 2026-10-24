@@ -68,6 +68,7 @@
     <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.5-1.5 7 5-3 5 3-1.5-7"/></symbol>
     <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
     <symbol id="i-cert" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 8h10M7 12h6M15 16l-1 5 3-2 3 2-1-5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
     <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></symbol>
   </svg>
 
@@ -84,6 +85,7 @@
           <li><a href="#work">Work</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#certificates">Certificates</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -127,7 +129,7 @@
             </div>
           </div>
           <div class="hero-facts">
-            <div class="fact"><strong>4.00</strong><span>Cumulative GPA<br>Dean's List</span></div>
+            <div class="fact"><strong>4.00</strong><span>GPA · President's<br>List 2025–26</span></div>
             <div class="fact"><strong>UGRF</strong><span>2026 research<br>paper &amp; poster</span></div>
             <div class="fact"><strong>9</strong><span>Projects in<br>this portfolio</span></div>
           </div>
@@ -187,9 +189,13 @@
     <section class="section" id="about" style="background: var(--bg-2);">
       <div class="container about-grid">
         <figure class="portrait reveal">
-          <img src="images/me/photo.webp" width="683" height="958" alt="Osama Abutaha at an Effat University event" loading="lazy">
-          <div class="avatar-badge" aria-hidden="true"><img src="images/me/avatar.webp" alt="" loading="lazy"></div>
-          <figcaption>Jeddah, Saudi Arabia</figcaption>
+          <button class="flip" type="button" aria-pressed="false" aria-label="Show my Bitmoji instead of my photo">
+            <span class="flip-inner">
+              <span class="flip-face flip-front"><img src="images/me/photo.webp" width="683" height="853" alt="Photo of Osama Abutaha" loading="lazy"></span>
+              <span class="flip-face flip-back"><img src="images/me/bitmoji.webp" width="640" height="900" alt="Osama Abutaha's Bitmoji" loading="lazy"></span>
+            </span>
+          </button>
+          <figcaption><span class="flip-hint">Tap the photo to meet my Bitmoji</span><span>Jeddah, Saudi Arabia</span></figcaption>
         </figure>
         <div class="about-copy reveal">
           <p class="eyebrow">About me</p>
@@ -201,9 +207,9 @@
             interfaces that make those results usable.
           </p>
           <p>
-            I've maintained a <strong>4.00 GPA</strong> on the Dean's List and presented research at
-            Effat's Undergraduate Research Forum. Outside class I lead the university's futsal club,
-            organise events, and care a lot about clear communication: documentation, posters and demos
+            I've maintained a <strong>4.00 GPA</strong>, was named to the <strong>President's List</strong> for 2025–2026, and presented research at
+            Effat's Undergraduate Research Forum. Outside class I serve as Vice President of the IEEE Computer Society,
+            lead the university's futsal club, volunteer, and care a lot about clear communication: documentation, posters and demos
             are part of how I ship.
           </p>
           <div class="now">
@@ -236,6 +242,14 @@
             <h3 class="col-title">Leadership &amp; service</h3>
             <ol class="timeline">
               <li>
+                <span class="when">Current</span>
+                <div>
+                  <h3>Vice President, IEEE Computer Society</h3>
+                  <p class="org">Effat University · IEEE Student Member, Western Saudi Arabia Section</p>
+                  <p>Helping lead the computing society's activities for students at Effat.</p>
+                </div>
+              </li>
+              <li>
                 <span class="when">2024 – Present</span>
                 <div>
                   <h3>Leader, Effat Futsal Club</h3>
@@ -252,11 +266,11 @@
                 </div>
               </li>
               <li>
-                <span class="when">2025</span>
+                <span class="when">2025 – 2026</span>
                 <div>
-                  <h3>Student Organiser, Graduation 2025</h3>
+                  <h3>Student Organiser, Graduation Ceremonies</h3>
                   <p class="org">Effat University</p>
-                  <p>Helped coordinate logistics for the university's graduation ceremony.</p>
+                  <p>Helped organise the 2025 graduation and, with the Watheq volunteer team, the February 2026 ceremony for Effat's 42nd graduating class.</p>
                 </div>
               </li>
               <li>
@@ -266,10 +280,11 @@
                 </div>
               </li>
               <li>
-                <span class="when">Volunteering</span>
+                <span class="when">2024 – 2026</span>
                 <div>
-                  <h3>Volunteer, National Center for Non-Profit Sector</h3>
-                  <p class="org">"Let's Walk Together" community event</p>
+                  <h3>Volunteer · 163 certified hours</h3>
+                  <p class="org">National Volunteering Platform (National Center for Non-Profit Sector)</p>
+                  <p>Eight certified opportunities, including 70 hours with "Ambassadors of Giving", 65 hours with "Hands That Make an Impact", Civil Defense fire-safety awareness, and Effat's "Let's Walk Together" events.</p>
                 </div>
               </li>
               <li>
@@ -293,27 +308,43 @@
             <ul class="awards">
               <li class="award">
                 <span class="badge"><svg class="icon"><use href="#i-award"/></svg></span>
+                <div><h3>President's List · 2025–2026</h3><p>Effat University, for academic excellence</p></div>
+              </li>
+              <li class="award">
+                <span class="badge"><svg class="icon"><use href="#i-award"/></svg></span>
                 <div><h3>Dean's List · 4.00 GPA</h3><p>Effat University, College of Engineering</p></div>
               </li>
               <li class="award">
                 <span class="badge"><svg class="icon"><use href="#i-doc"/></svg></span>
-                <div><h3>UGRF 2026 Research Presenter</h3><p>4th Undergraduate Research Forum: paper and poster on multi-disease health risk prediction (certificate of participation)</p></div>
+                <div><h3>UGRF 2026 Research Presenter</h3><p>7th Effat Undergraduate Research Forum (Feb 2026): research poster on multi-disease health risk prediction</p></div>
               </li>
               <li class="award">
                 <span class="badge"><svg class="icon"><use href="#i-cert"/></svg></span>
-                <div><h3>Presentation Honors</h3><p>University of Colorado Boulder</p></div>
+                <div><h3>Successful Presentation, with honors</h3><p>University of Colorado Boulder via Coursera · 2025</p></div>
               </li>
               <li class="award">
-                <span class="badge"><svg class="icon"><use href="#i-cert"/></svg></span>
-                <div><h3>Programming for Everybody &amp; Python Data Structures</h3><p>University of Michigan via Coursera · 2024</p></div>
-              </li>
-              <li class="award">
-                <span class="badge"><svg class="icon"><use href="#i-cert"/></svg></span>
-                <div><h3>Generating Video Using AI · Advanced Adobe Photoshop</h3><p>Professional courses</p></div>
+                <span class="badge"><svg class="icon"><use href="#i-spark"/></svg></span>
+                <div><h3>163 certified volunteer hours</h3><p>National Volunteering Platform · 2024–2026</p></div>
               </li>
             </ul>
+            <a class="btn btn-ghost btn-sm" href="#certificates" style="margin-top:1rem">See all certificates <svg class="icon icon-arrow"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATES ============ -->
+    <section class="section" id="certificates" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Certificates</p>
+          <h2>Always <em class="accent">learning</em>, on record.</h2>
+          <p>Courses, workshops and memberships. Where the issuer offers verification, each card links to it.</p>
+        </div>
+        <div class="toolbar reveal">
+          <div class="filters" id="cert-filters" role="group" aria-label="Filter certificates"></div>
+        </div>
+        <div class="cert-grid" id="cert-grid" aria-live="polite"></div>
       </div>
     </section>
 
@@ -425,6 +456,7 @@
     <section class="section contact" id="contact">
       <div class="container">
         <div class="contact-card reveal">
+          <img class="contact-bitmoji" src="images/me/bitmoji.webp" width="640" height="900" alt="" aria-hidden="true" loading="lazy">
           <p class="eyebrow">Contact</p>
           <h2>Let's build something <em class="accent">useful</em>.</h2>
           <p>I'm looking for internships and research opportunities in AI and software engineering. The fastest way to reach me is email.</p>
@@ -450,6 +482,12 @@
       </div>
     </div>
   </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Certificate preview">
+    <button class="icon-btn close" type="button" aria-label="Close preview"><svg class="icon"><use href="#i-close"/></svg></button>
+    <img alt="">
+    <p></p>
+  </dialog>
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

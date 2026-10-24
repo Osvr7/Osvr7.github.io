@@ -427,3 +427,47 @@ window.CATEGORIES = [
   { id: "systems", label: "Systems & Networks" },
   { id: "research", label: "Research" }
 ];
+
+/*
+  Certificates from the شهاداتي folder. "verify" is the issuer's own verification
+  link (Coursera) where one exists; "image" is a preview of certificates that
+  contain no ID numbers. Volunteering certificates show a national ID, so they
+  are summarised in the Experience section instead of shown here.
+*/
+window.CERT_GROUPS = [
+  { id: "all", label: "All" },
+  { id: "ai", label: "AI, Data & Programming" },
+  { id: "pro", label: "Professional Skills" },
+  { id: "events", label: "Workshops & Research" },
+  { id: "member", label: "Memberships & Sport" }
+];
+
+window.CERTIFICATES = [
+  { group: "ai", title: "Mathematics for Machine Learning and Data Science", kind: "Specialization · 3 courses", issuer: "DeepLearning.AI", date: "Dec 2025", verify: "https://coursera.org/verify/specialization/L3EQF7FKZVE6", image: "images/certs/math-ml-specialization.webp", featured: true },
+  { group: "ai", title: "Python for Data Science, AI & Development", kind: "Course", issuer: "IBM", date: "Nov 2025", verify: "https://coursera.org/verify/4SDE5U377HZB", image: "images/certs/ibm-python-ds.webp", featured: true },
+  { group: "ai", title: "Python Data Structures", kind: "Course", issuer: "University of Michigan", date: "Apr 2024", verify: "https://coursera.org/verify/JL8WGFMZ6BKA", image: "images/certs/python-data-structures.webp" },
+  { group: "ai", title: "Programming for Everybody (Getting Started with Python)", kind: "Course", issuer: "University of Michigan", date: "Mar 2024", verify: "https://coursera.org/verify/J8LNZZD42ZFX", image: "images/certs/programming-for-everybody.webp" },
+  { group: "ai", title: "Applications of AI in Improving Safety Systems", kind: "Training course", issuer: "Sindal", date: "Oct 2025", image: "images/certs/ai-safety-systems.webp" },
+  { group: "ai", title: "Python Basics", kind: "Training course · 3 hours", issuer: "HackerRank Developers Club (HRSD)", date: "Dec 2023" },
+  { group: "pro", title: "Successful Presentation", kind: "Course · with honors", issuer: "University of Colorado Boulder", date: "Mar 2025", verify: "https://coursera.org/verify/ONFS8PKL0JYX", image: "images/certs/successful-presentation.webp", featured: true },
+  { group: "pro", title: "Intellectual Property as Competitive Advantage for Companies", kind: "Course", issuer: "EDHEC Business School", date: "Apr 2026", verify: "https://coursera.org/verify/6PWYCTEN5LBB", image: "images/certs/intellectual-property.webp" },
+  { group: "pro", title: "Business Strategy: Business Model Canvas Analysis with Miro", kind: "Guided project", issuer: "Coursera", date: "Apr 2026", verify: "https://coursera.org/verify/2AAQ6TL7JV88", image: "images/certs/business-strategy-miro.webp" },
+  { group: "pro", title: "Personal Productivity, Time Management and Prioritization", kind: "Course", issuer: "Starweaver", date: "Mar 2024", verify: "https://coursera.org/verify/ZHYVHNFU7TPS", image: "images/certs/productivity.webp" },
+  { group: "pro", title: "Academic Information Seeking", kind: "Course", issuer: "University of Copenhagen & DTU", date: "Oct 2024", verify: "https://coursera.org/verify/GU3UC3I65Y4S", image: "images/certs/academic-information-seeking.webp" },
+  { group: "pro", title: "Digital Safety and Security", kind: "Course", issuer: "Arizona State University", date: "Oct 2024", verify: "https://coursera.org/verify/CGFUBLOAL3Y4", image: "images/certs/digital-safety.webp" },
+  { group: "pro", title: "Digital Tools and Well-Being", kind: "Course", issuer: "Arizona State University", date: "Mar 2024", verify: "https://coursera.org/verify/QGK2GX3TGMTF" },
+  { group: "pro", title: "Digital Communication and Emotion", kind: "Course", issuer: "Arizona State University", date: "Mar 2025", verify: "https://coursera.org/verify/AIK3EYXCG7DZ" },
+  { group: "pro", title: "The Great Sustainability Transition: Global Challenges, Local Actions", kind: "Course", issuer: "Leiden University", date: "Nov 2025", verify: "https://coursera.org/verify/JBRW613DX1CQ", image: "images/certs/sustainability-transition.webp" },
+  { group: "pro", title: "The Sustainable Development Goals: A Global, Transdisciplinary Vision", kind: "Course", issuer: "University of Copenhagen", date: "Nov 2025", verify: "https://coursera.org/verify/GEWEAL4L5XLQ", image: "images/certs/sdgs.webp" },
+  { group: "pro", title: "Design Brainstorming Diagrams for Businesses with Creately", kind: "Guided project", issuer: "Coursera", date: "Apr 2026", verify: "https://coursera.org/verify/R5W2JUXMTH6S" },
+  { group: "pro", title: "Create a Business Mind Map with Coggle", kind: "Guided project", issuer: "Coursera", date: "Apr 2026", verify: "https://coursera.org/verify/BNIDCPUJ2E47" },
+  { group: "pro", title: "English Grammar (3 courses: Simple Past; Word Forms & Simple Present; Questions, Progressive & Future)", kind: "Courses", issuer: "University of California, Irvine", date: "2025 – 2026", verify: "https://coursera.org/verify/KC1GWQOM5MOZ" },
+  { group: "pro", title: "Ultimate Photoshop Course: Step by Step", kind: "Course · 2 hours", issuer: "Udemy", date: "Jul 2020", image: "images/certs/photoshop-udemy.webp" },
+  { group: "pro", title: "How to Write a Successful CV", kind: "Course · 1 hour", issuer: "Doroob", date: "Jan 2022" },
+  { group: "events", title: "7th Undergraduate Research Forum: Research Poster", kind: "Certificate of participation", issuer: "Effat University", date: "Feb 2026", image: "images/certs/ugrf-2026.webp", featured: true },
+  { group: "events", title: "Digital Portfolio Building Workshop", kind: "Certificate of attendance", issuer: "Effat University", date: "Nov 2025", image: "images/certs/portfolio-workshop.webp" },
+  { group: "events", title: "Generating Videos using AI Workshop", kind: "Certificate of attendance", issuer: "Effat College of Engineering", date: "Mar 2024", image: "images/certs/ai-video-workshop.webp" },
+  { group: "member", title: "IEEE Computer Society Student Member", kind: "Membership", issuer: "IEEE Computer Society", date: "2026", image: "images/certs/ieee-cs-membership.webp" },
+  { group: "member", title: "IEEE Student Member, Western Saudi Arabia Section", kind: "Membership", issuer: "IEEE", date: "2026", image: "images/certs/ieee-membership.webp" },
+  { group: "member", title: "Dodgeball Coaches Preparation Course", kind: "Certificate of attendance", issuer: "Saudi Dodgeball Federation", date: "Apr 2025", image: "images/certs/dodgeball-coaching.webp" }
+];

@@ -309,7 +309,7 @@ section { position: relative; }
 }
 .filter:hover { color: var(--ink); border-color: var(--ink); }
 .filter[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
-.filter .count { margin-left: .35rem; font-family: var(--font-mono); font-size: .72rem; opacity: .6; }
+.filter .count { margin-left: .35rem; font-family: var(--font-mono); font-size: .72rem; opacity: .85; }
 .search { position: relative; }
 .search input {
   width: min(280px, 100%); padding: .62rem 1rem .62rem 2.4rem; border-radius: 999px;
@@ -346,7 +346,7 @@ section { position: relative; }
 
 /* ---------- About ---------- */
 .about-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
-.portrait { position: relative; max-width: 380px; margin: 0; }
+.portrait { position: relative; margin: 0; }
 .portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
 .portrait figcaption { margin-top: .9rem; font-size: .82rem; color: var(--faint); }
 .portrait .avatar-badge {
@@ -591,4 +591,67 @@ td:last-child { font-weight: 700; color: var(--green); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------- Portrait flip (photo <-> Bitmoji) ---------- */
+.portrait { max-width: 340px; }
+.flip { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; perspective: 1400px; border-radius: var(--radius-lg); }
+.flip-inner { position: relative; display: block; aspect-ratio: 4 / 5; transform-style: preserve-3d; transition: transform .8s var(--ease); }
+.flip[aria-pressed="true"] .flip-inner { transform: rotateY(180deg); }
+.flip-face {
+  position: absolute; inset: 0; display: block; overflow: hidden; border-radius: var(--radius-lg);
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  box-shadow: var(--shadow-lg); border: 1px solid var(--line); background: var(--surface);
+}
+.flip-face img { width: 100%; height: 100%; object-fit: cover; }
+.flip-front img { object-position: center 30%; }
+.flip-back { transform: rotateY(180deg); background: radial-gradient(120% 90% at 50% 100%, var(--accent-soft), transparent 60%), linear-gradient(180deg, var(--surface), var(--bg-2)); }
+.flip-back img { object-fit: contain; object-position: center bottom; padding: 10% 8% 0; }
+.flip:hover .flip-inner { box-shadow: none; }
+.flip:hover .flip-face { box-shadow: var(--shadow-lg), 0 0 0 1px var(--line-strong); }
+.flip:focus-visible { outline-offset: 6px; }
+.portrait figcaption { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.flip-hint { display: inline-flex; align-items: center; gap: .4rem; color: var(--muted); }
+.flip-hint::before { content: "↻"; color: var(--accent); font-size: 1rem; line-height: 1; }
+
+/* ---------- Bitmoji on the contact card ---------- */
+.contact-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: clamp(24px, 5vw, 72px); align-items: center; }
+.contact-card > :not(.contact-bitmoji) { grid-column: 1; position: relative; z-index: 2; }
+.contact-bitmoji {
+  grid-column: 2; grid-row: 1 / span 4; align-self: center;
+  width: clamp(190px, 22vw, 290px); aspect-ratio: 1; height: auto; object-fit: contain; object-position: center bottom;
+  padding: 14% 10% 0; border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, color-mix(in srgb, var(--accent) 38%, transparent), color-mix(in srgb, var(--bg) 10%, transparent) 70%);
+  border: 1px solid color-mix(in srgb, var(--bg) 18%, transparent);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .45);
+}
+.contact-links { max-width: none; }
+
+/* ---------- Certificates ---------- */
+.cert-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.cert {
+  display: grid; grid-template-rows: auto 1fr; overflow: hidden;
+  border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s;
+}
+.cert:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--line-strong); }
+.cert-thumb { position: relative; display: block; width: 100%; padding: 0; border: 0; aspect-ratio: 16 / 10; overflow: hidden; background: var(--bg-2); cursor: zoom-in; border-bottom: 1px solid var(--line); }
+.cert-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .6s var(--ease); }
+.cert:hover .cert-thumb img { transform: scale(1.04); }
+.cert-thumb.noimg { cursor: default; display: grid; place-items: center; background: linear-gradient(135deg, var(--bg-2), var(--surface-2)); }
+.cert-thumb.noimg span { font-family: var(--font-display); font-style: italic; font-size: 2.6rem; color: var(--accent); opacity: .7; }
+.cert-body { display: grid; gap: .45rem; padding: 1rem 1.1rem 1.15rem; align-content: start; }
+.cert-meta { display: flex; justify-content: space-between; gap: .5rem; font-family: var(--font-mono); font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); }
+.cert h3 { font-family: var(--font-body); font-weight: 600; font-size: .98rem; line-height: 1.35; }
+.cert .issuer { color: var(--muted); font-size: .88rem; }
+.cert .verify { display: inline-flex; align-items: center; gap: .35rem; margin-top: .2rem; font-size: .82rem; font-weight: 600; color: var(--green); width: max-content; }
+.cert .verify:hover { text-decoration: underline; }
+.cert-more { grid-column: 1 / -1; justify-self: center; margin-top: .6rem; }
+
+@media (max-width: 1080px) { .cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .cert-grid { grid-template-columns: 1fr; }
+  .contact-card { grid-template-columns: 1fr; }
+  .contact-bitmoji { grid-column: 1; grid-row: auto; width: 150px; order: -1; justify-self: start; margin-bottom: 1rem; }
+  .portrait { max-width: 300px; margin-inline: auto; }
 }

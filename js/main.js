@@ -184,5 +184,70 @@
     stage.parentElement.addEventListener("pointerleave", function () { layers.forEach(function (el, i) { el.style.transform = ""; }); });
   }
 
+  /* ---------- Portrait flip (photo <-> Bitmoji) ---------- */
+  $$(".flip").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var on = btn.getAttribute("aria-pressed") !== "true";
+      btn.setAttribute("aria-pressed", String(on));
+      btn.setAttribute("aria-label", on ? "Show my photo instead of my Bitmoji" : "Show my Bitmoji instead of my photo");
+      var hint = btn.parentElement.querySelector(".flip-hint");
+      if (hint) hint.textContent = on ? "Tap again to see my photo" : "Tap the photo to meet my Bitmoji";
+    });
+  });
+
+  /* ---------- Certificates ---------- */
+  var certGrid = $("#cert-grid"), certFilters = $("#cert-filters");
+  var certs = window.CERTIFICATES || [];
+  if (certGrid && certFilters && certs.length) {
+    var LIMIT = 9, cState = { group: "all", all: false };
+    var groups = (window.CERT_GROUPS || []).filter(function (g) { return g.id === "all" || certs.some(function (c) { return c.group === g.id; }); });
+    certFilters.innerHTML = groups.map(function (g) {
+      var n = g.id === "all" ? certs.length : certs.filter(function (c) { return c.group === g.id; }).length;
+      return '<button type="button" class="filter" data-group="' + g.id + '" aria-pressed="' + (g.id === "all") + '">' + esc(g.label) + '<span class="count">' + n + "</span></button>";
+    }).join("");
+    // featured first, then newest first as listed
+    var ordered = certs.slice().sort(function (a, b) { return (b.featured ? 1 : 0) - (a.featured ? 1 : 0); });
+    var certCard = function (c) {
+      var thumb = c.image
+        ? '<button type="button" class="cert-thumb zoom" data-src="' + esc(c.image) + '" data-caption="' + esc(c.title + " · " + c.issuer) + '" aria-label="View certificate: ' + esc(c.title) + '"><img src="' + esc(c.image) + '" alt="" loading="lazy" decoding="async"></button>'
+        : '<div class="cert-thumb noimg" aria-hidden="true"><span>' + esc(c.issuer.charAt(0)) + "</span></div>";
+      return '<article class="cert">' + thumb + '<div class="cert-body">' +
+        '<div class="cert-meta"><span>' + esc(c.kind) + "</span><span>" + esc(c.date) + "</span></div>" +
+        "<h3>" + esc(c.title) + "</h3>" +
+        '<p class="issuer">' + esc(c.issuer) + "</p>" +
+        (c.verify ? '<a class="verify" href="' + esc(c.verify) + '" target="_blank" rel="noopener noreferrer">Verify ' + icon("external") + "</a>" : "") +
+        "</div></article>";
+    };
+    var renderCerts = function () {
+      var list = ordered.filter(function (c) { return cState.group === "all" || c.group === cState.group; });
+      var shown = cState.all ? list : list.slice(0, LIMIT);
+      certGrid.innerHTML = shown.map(certCard).join("") +
+        (list.length > LIMIT ? '<button type="button" class="btn btn-ghost btn-sm cert-more" aria-expanded="' + cState.all + '">' + (cState.all ? "Show fewer" : "Show all " + list.length + " certificates") + "</button>" : "");
+    };
+    certFilters.addEventListener("click", function (e) {
+      var b = e.target.closest(".filter"); if (!b) return;
+      cState.group = b.getAttribute("data-group"); cState.all = false;
+      $$(".filter", certFilters).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      renderCerts();
+    });
+    certGrid.addEventListener("click", function (e) {
+      if (e.target.closest(".cert-more")) { cState.all = !cState.all; renderCerts(); }
+    });
+    renderCerts();
+  }
+
+  /* ---------- Lightbox (home page certificates) ---------- */
+  var box = $("#lightbox");
+  if (box && certGrid && typeof box.showModal === "function") {
+    var bImg = box.querySelector("img"), bCap = box.querySelector("p");
+    certGrid.addEventListener("click", function (e) {
+      var z = e.target.closest(".zoom"); if (!z) return;
+      bImg.src = z.getAttribute("data-src"); bImg.alt = z.getAttribute("data-caption");
+      bCap.textContent = z.getAttribute("data-caption"); box.showModal();
+    });
+    box.querySelector(".close").addEventListener("click", function () { box.close(); });
+    box.addEventListener("click", function (e) { if (e.target === box) box.close(); });
+  }
+
   observeReveal(document);
 })();
