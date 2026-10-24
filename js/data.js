@@ -111,8 +111,11 @@ window.PROJECTS = [
       { value: "7", label: "classifiers compared per disease" },
       { value: "90.7%", label: "best test accuracy (sleep, SVM)" }
     ],
-    repo: null,
-    links: [],
+    repo: "https://github.com/Osvr7/health-risk-prediction",
+    links: [
+      { label: "Research paper (PDF)", url: "https://github.com/Osvr7/health-risk-prediction/blob/main/docs/Final%20Paper.pdf" },
+      { label: "UGRF 2026 poster (PDF)", url: "https://github.com/Osvr7/health-risk-prediction/blob/main/docs/UGRF-2026-poster.pdf" }
+    ],
     problem: "Diabetes, sleep disorders and heart disease often go unnoticed until they are advanced. Most prediction tools look at one condition at a time and ignore lifestyle factors such as sleep, stress and activity.",
     solution: "One notebook-based system that cleans three public datasets, explores them, trains and tunes seven classifiers for each condition, keeps the best model per disease, and then asks the user a short questionnaire to produce a combined health report with probabilities and recommendations.",
     features: [
@@ -173,8 +176,10 @@ window.PROJECTS = [
       { value: "5", label: "detailed use cases" },
       { value: "10+", label: "UML, C4 & ER diagrams" }
     ],
-    repo: null,
-    links: [],
+    repo: "https://github.com/Osvr7/cognitive-health-monitoring-system",
+    links: [
+      { label: "Full specification (PDF)", url: "https://github.com/Osvr7/cognitive-health-monitoring-system/blob/main/docs/software-requirements-and-design-specification.pdf" }
+    ],
     problem: "Dementia is often diagnosed late because clinical memory tests are stressful, costly and infrequent. Families and doctors lack a continuous, non-invasive signal between appointments.",
     solution: "A system design that, with the senior's consent, analyses their social-media writing over time for semantic signs of decline. The design anonymises personal data before analysis, scores risk over time, shows trends to clinicians, and alerts caregivers when a score drops sharply. The model choices in the design (NER-based anonymisation, a ClinicalBERT scorer) are proposals; this project delivered the specification and prototypes, not a trained model.",
     features: [
@@ -221,7 +226,7 @@ window.PROJECTS = [
     cover: "images/projects/jeddah-horizons/home.webp",
     coverAlt: "Jeddah Horizons home page with a hero video of the Jeddah skyline",
     frame: "browser",
-    repo: null,
+    repo: "https://github.com/Osvr7/jeddah-horizons",
     links: [],
     problem: "Visitors to Jeddah have no single, simple place to discover the city's historic and modern landmarks.",
     solution: "A dark-themed website backed by a MySQL database: landmarks are stored with descriptions and images and rendered dynamically, while users can create accounts and sign in.",
@@ -255,7 +260,7 @@ window.PROJECTS = [
     cover: "images/projects/event-db/eer-1.webp",
     coverAlt: "EER diagram with Student, Organizer and Register relationship",
     frame: "none",
-    repo: null,
+    repo: "https://github.com/Osvr7/campus-event-management-db",
     links: [],
     problem: "Campus events are coordinated through scattered messages and spreadsheets, so tracking venues, equipment and who registered is error-prone.",
     solution: "A Campus Event Management System database that links events to venues, organisers, required resources and student registrations, with views that answer common questions directly.",
@@ -290,7 +295,7 @@ window.PROJECTS = [
     cover: "images/projects/university-network/servers.webp",
     coverAlt: "Shared web, DNS and DHCP servers between Effat and Alfaisal universities",
     frame: "none",
-    repo: null,
+    repo: "https://github.com/Osvr7/inter-university-network",
     links: [],
     problem: "Two separate organisations need to collaborate and share IT services without duplicating infrastructure.",
     solution: "Each university gets a hierarchical LAN (departmental switches into a core switch and router). Three routers in a triangle form the WAN, so traffic has an alternative path if one link fails. Shared DNS, DHCP and web servers sit in the middle and serve both campuses.",
@@ -330,7 +335,7 @@ window.PROJECTS = [
     coverAlt: "The ATM login and main menu windows captured from the running Java application",
     coverFit: "cover",
     frame: "none",
-    repo: null,
+    repo: "https://github.com/Osvr7/java-swing-atm",
     links: [],
     problem: "Demonstrate core OOP principles (abstraction, inheritance and encapsulation) in a realistic, interactive application.",
     solution: "A Swing GUI on top of a small domain model: users own accounts, accounts record transactions, and an ATM service loads and saves everything to text files.",
@@ -364,7 +369,7 @@ window.PROJECTS = [
     cover: "images/projects/svd-compression/results.webp",
     coverAlt: "The same portrait reconstructed with k = 5, 20, 50 and 100 singular values",
     frame: "none",
-    repo: null,
+    repo: "https://github.com/Osvr7/svd-image-compression",
     links: [],
     problem: "Images are large matrices, and most of their information is concentrated in a few dominant patterns.",
     solution: "Compute the SVD of a grayscale image and reconstruct it with only the top k singular values, then compare visual quality against the storage needed for each k.",
@@ -397,7 +402,7 @@ window.PROJECTS = [
     coverAlt: "C++ stack class implementation",
     coverFit: "code",
     frame: "none",
-    repo: null,
+    repo: "https://github.com/Osvr7/postfix-evaluator-cpp",
     links: [],
     problem: "Evaluate arithmetic expressions without parentheses or precedence rules.",
     solution: "Tokenise the input into a queue, then process tokens with a stack: operands are pushed, and operators pop two values and push the result.",
